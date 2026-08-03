@@ -13,6 +13,13 @@ class ParcoursController extends AbstractController
     {
         $experiences = [
             [
+                'title' => 'Développeuse web (stage et CDD)',
+                'company' => 'Kairios',
+                'date' => 'Avril 2026 - Août 2026',
+                'description' => "Développement Fullstack de plusieurs applications web : conception de nouvelles fonctionnalités sur mesure (Symfony, Twig, Bootstrap), maintenance de sites existants et création de sites (WordPress).",
+                'type' => 'CDD'
+            ],
+            [
                 'title' => 'Développeuse web (stage et alternance)',
                 'company' => 'E-Conception',
                 'date' => 'Avril 2025 - Février 2026',
