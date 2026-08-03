@@ -46,7 +46,7 @@ class ParcoursController extends AbstractController
             [
                 'title' => 'BUT Informatique',
                 'school' => 'IUT Lyon 1 (site de Bourg-en-Bresse)',
-                'date' => '2022 - Actuellement',
+                'date' => '2022 - 2026',
                 'description' => "Bachelor Universitaire de Technologie sur 3 ans.",
                 'type' => 'En cours'
             ],

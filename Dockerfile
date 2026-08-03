@@ -30,6 +30,7 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 # Set production environment
 ENV APP_ENV=prod
 ENV APP_DEBUG=0
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
