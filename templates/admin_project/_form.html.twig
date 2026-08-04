@@ -3,16 +3,16 @@
         <div style="background: rgba(255,0,0,0.2); border: 1px solid red; color: white; padding: 1rem; margin-bottom: 1rem;">
             <h4 style="color: #fca5a5;">Attention, il y a des erreurs de validation :</h4>
             <ul>
-            {% for error in form.vars.errors %}
-                <li>Erreur globale : {{ error.message }}</li>
-            {% endfor %}
-            {% for child in form %}
-                {% for error in child.vars.errors %}
-                    <li>Champ "{{ child.vars.name }}" : {{ error.message }}</li>
+            {% macro display_errors(form_view) %}
+                {% for error in form_view.vars.errors %}
+                    <li>Champ "{{ form_view.vars.name }}" : {{ error.message }}</li>
                 {% endfor %}
-            {% endfor %}
+                {% for child in form_view %}
+                    {{ _self.display_errors(child) }}
+                {% endfor %}
+            {% endmacro %}
+            {{ _self.display_errors(form) }}
             </ul>
-            <p>Si vous voyez "The file is too large", cela signifie que l'image dépasse la limite (souvent 2Mo) du serveur.</p>
         </div>
     {% endif %}
     <div style="color: #fca5a5; font-size: 0.9rem; margin-bottom: 1rem;">{{ form_errors(form) }}</div>
