@@ -16,7 +16,7 @@ class ProjectType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('contexte')
+            ->add('contexte', null, ['required' => false])
             ->add('imageFile', \Symfony\Component\Form\Extension\Core\Type\FileType::class, [
                 'label' => 'Image principale (fichier)',
                 'required' => false,
@@ -33,12 +33,13 @@ class ProjectType extends AbstractType
                     )
                 ],
             ])
-            ->add('link')
+            ->add('link', null, ['required' => false])
             ->add('technologies', null, [
                 'label' => 'Technologies (séparées par des virgules)',
-                'attr' => ['placeholder' => 'ex: Symfony, React, Docker']
+                'attr' => ['placeholder' => 'ex: Symfony, React, Docker'],
+                'required' => false,
             ])
-            ->add('duration')
+            ->add('duration', null, ['required' => false])
             ->add('images', CollectionType::class, [
                 'entry_type' => ProjectImageType::class,
                 'entry_options' => ['label' => false],

@@ -1,4 +1,5 @@
 {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+    <div style="color: #fca5a5; font-size: 0.9rem; margin-bottom: 1rem;">{{ form_errors(form) }}</div>
     <div style="margin-bottom: 1.5rem;">
         {{ form_label(form.title, 'Titre du projet', {'label_attr': {'class': 'form-label'}}) }}
         {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
